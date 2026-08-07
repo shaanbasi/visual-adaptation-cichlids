@@ -1,7 +1,3 @@
-getwd()
-setwd("C:/Users/shaan/OneDrive/MSc_Bioinformatics/LIFE703/visual-adaptation-cichlids")
-getwd()
-
 library(dplyr)
 library(tibble)
 
