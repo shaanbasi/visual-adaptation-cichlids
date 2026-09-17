@@ -13,13 +13,13 @@ beyond canonical opsin pathways.
 Retinal RNA-seq data were analysed from 12 individuals representing five
 cichlid species:
 
-  Code   Species                        n
-  ------ ---------------------------- ---
-  Ab     *Astatotilapia burtoni*        2
-  Mz     *Maylandia zebra*              2
-  Nb     *Neolamprologus brichardi*     2
-  On     *Oreochromis niloticus*        3
-  Pn     *Pundamilia nyererei*          3
+| Code | Species | Biological replicates (n) |
+|------|---------|--------------------------:|
+| Ab | *Astatotilapia burtoni* | 2 |
+| Mz | *Maylandia zebra* | 2 |
+| Nb | *Neolamprologus brichardi* | 2 |
+| On | *Oreochromis niloticus* | 3 |
+| Pn | *Pundamilia nyererei* | 3 |
 
 Species-specific read processing and quantification were performed prior
 to the analyses contained in this repository. Reads were quality checked
@@ -176,5 +176,4 @@ transcriptional regulation and variation in retinal cell composition.
 This analysis was conducted as part of an MSc Bioinformatics
 dissertation at the University of Liverpool (2026).
 
-**Supervisor:** Dr Tarang Mehta, Department of Biochemistry, Cell and
-Systems Biology, University of Liverpool.
+**Supervisor:** Dr Tarang Mehta, University of Liverpool.
