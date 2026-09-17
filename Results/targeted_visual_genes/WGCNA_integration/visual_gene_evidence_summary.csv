@@ -1,0 +1,7 @@
+species,evidence_class,n_visual_gene_results
+Ab,DE only,10
+Mz,DE only,9
+Nb,DE only,23
+On,DE + species-associated module,2
+On,DE only,20
+Pn,DE only,10

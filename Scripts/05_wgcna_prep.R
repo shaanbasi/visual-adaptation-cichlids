@@ -60,11 +60,20 @@ vsd_wgcna <- vst(
 datExpr <- t(assay(vsd_wgcna))
 datExpr <- as.data.frame(datExpr)
 
+message(
+  "WGCNA expression matrix: ",
+  nrow(datExpr),
+  " samples x ",
+  ncol(datExpr),
+  " genes"
+)
+
 ## remove genes and samples failing wgcna quality checks
 quality_check <- goodSamplesGenes(
   datExpr,
   verbose = 3
 )
+
 
 if (!quality_check$allOK) {
   
@@ -91,6 +100,16 @@ if (!quality_check$allOK) {
   ]
 }
 
+
+message(
+  "Final WGCNA matrix: ",
+  nrow(datExpr),
+  " samples x ",
+  ncol(datExpr),
+  " genes"
+)
+
+
 ##match metadata to retained samples
 speciesTraits <- coldata[
   rownames(datExpr),
@@ -101,6 +120,13 @@ speciesTraits <- coldata[
 ##keep the original categorical species variable
 speciesTraits$species <- factor(speciesTraits$species)
 
+
+## record genes retained for WGCNA
+wgcna_genes <- colnames(
+  datExpr
+)
+
+
 ## save inputs required by run_wgcna
 saveRDS(
   datExpr,
@@ -110,4 +136,21 @@ saveRDS(
 saveRDS(
   speciesTraits,
   file.path(output_dir, "speciesTraits.rds")
+)
+
+saveRDS(
+  wgcna_genes,
+  file.path(output_dir, "wgcna_genes.rds")
+)
+
+
+## export readable csv
+readr::write_csv(
+tibble::tibble(
+  gene_name = wgcna_genes
+),
+file.path(
+  output_dir,
+  "wgcna_genes.csv"
+)
 )

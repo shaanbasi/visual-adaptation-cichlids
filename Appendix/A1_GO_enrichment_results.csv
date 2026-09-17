@@ -1,0 +1,38 @@
+species,group,term_id,term_name,source,p_value,intersection_size,term_size,fold_enrichment
+Ab,Other species higher,GO:0006412,translation,GO:BP,3.31E-08,37,201,3.334892024
+Ab,Other species higher,GO:0160307,protein biosynthetic process,GO:BP,3.31E-08,37,201,3.334892024
+Ab,Other species higher,GO:0009141,nucleoside triphosphate metabolic process,GO:BP,0.015783382,11,51,3.907496696
+Ab,Other species higher,GO:0009144,purine nucleoside triphosphate metabolic process,GO:BP,0.015783382,10,43,4.213157114
+Ab,Other species higher,GO:0009205,purine ribonucleoside triphosphate metabolic process,GO:BP,0.015783382,10,43,4.213157114
+Ab,Other species higher,GO:0046034,ATP metabolic process,GO:BP,0.015783382,10,40,4.529143898
+Ab,Other species higher,GO:0005840,ribosome,GO:CC,1.80E-07,26,117,4.025905687
+Ab,Other species higher,GO:0005852,eukaryotic translation initiation factor 3 complex,GO:CC,0.028719016,5,13,6.967913689
+Ab,Other species higher,GO:0005622,intracellular anatomical structure,GO:CC,0.028719016,142,1987,1.294692367
+Ab,Other species higher,GO:0005737,cytoplasm,GO:CC,0.028719016,88,1124,1.418379584
+Ab,Other species higher,GO:0003735,structural constituent of ribosome,GO:MF,2.35E-08,27,112,4.367388759
+Ab,Other species higher,GO:0005198,structural molecule activity,GO:MF,2.46E-06,34,208,2.961363318
+Nb,Other species higher,GO:0005622,intracellular anatomical structure,GO:CC,1.16E-06,868,1987,1.152774007
+Nb,Other species higher,GO:0005737,cytoplasm,GO:CC,3.78E-05,506,1124,1.187972871
+Nb,Other species higher,GO:0043229,intracellular organelle,GO:CC,0.000156988,703,1626,1.140925012
+Nb,Other species higher,GO:0043226,organelle,GO:CC,0.00038244,707,1647,1.132786676
+Nb,Other species higher,GO:0043231,intracellular membrane-bounded organelle,GO:CC,0.00102342,562,1296,1.144336186
+Nb,Other species higher,GO:0043227,membrane-bounded organelle,GO:CC,0.001549376,567,1314,1.13870181
+On,On higher,GO:0019538,protein metabolic process,GO:BP,0.004312342,373,1177,1.219327241
+On,On higher,GO:0006412,translation,GO:BP,0.031145191,78,201,1.493091602
+On,On higher,GO:0160307,protein biosynthetic process,GO:BP,0.031145191,78,201,1.493091602
+On,On higher,GO:0005622,intracellular anatomical structure,GO:CC,0.001158744,598,1987,1.157953779
+On,On higher,GO:0043229,intracellular organelle,GO:CC,0.005566035,490,1626,1.159480492
+On,On higher,GO:0043226,organelle,GO:CC,0.007545516,493,1647,1.151704934
+On,On higher,GO:0005737,cytoplasm,GO:CC,0.016199663,344,1124,1.177551849
+On,On higher,GO:0005852,eukaryotic translation initiation factor 3 complex,GO:CC,0.018096897,10,13,2.959678619
+On,On higher,GO:0005488,binding,GO:MF,0.000299612,1362,4817,1.087898477
+On,Other species higher,GO:0000307,cyclin-dependent protein kinase holoenzyme complex,GO:CC,0.037708119,2,2,31.27672956
+On,Other species higher,GO:0005675,transcription factor TFIIH holo complex,GO:CC,0.037708119,2,2,31.27672956
+On,Other species higher,GO:0016528,sarcoplasm,GO:CC,0.037708119,2,2,31.27672956
+On,Other species higher,GO:0019908,nuclear cyclin-dependent protein kinase holoenzyme complex,GO:CC,0.037708119,2,2,31.27672956
+On,Other species higher,GO:0032806,carboxy-terminal domain protein kinase complex,GO:CC,0.037708119,2,2,31.27672956
+On,Other species higher,GO:0004519,endonuclease activity,GO:MF,0.030595285,6,26,7.217706821
+On,Other species higher,GO:0004520,DNA endonuclease activity,GO:MF,0.030595285,4,10,12.51069182
+On,Other species higher,GO:0004536,DNA nuclease activity,GO:MF,0.031247276,4,11,11.3733562
+Pn,Other species higher,GO:0140097,"catalytic activity, acting on DNA",GO:MF,0.001106311,13,80,4.767625369
+Pn,Other species higher,GO:0140640,"catalytic activity, acting on a nucleic acid",GO:MF,0.047315064,21,261,2.360627946

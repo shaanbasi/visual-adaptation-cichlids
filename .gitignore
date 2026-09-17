@@ -1,0 +1,16 @@
+# R / RStudio local files
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Temporary/editor files
+*~
+*.tmp
+
+# Downloaded Ensembl reference annotations
+Data/GTF_Ensembl101/

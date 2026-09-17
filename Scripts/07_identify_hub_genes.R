@@ -35,30 +35,21 @@ load(
   )
 )
 
-required_objects <- c(
-  "datExpr",
-  "speciesTraits",
-  "MEs",
-  "geneModuleAssignments"
-)
 
-missing_objects <- required_objects[
-  !vapply(
-    required_objects,
-    exists,
-    logical(1)
-  )
-]
 
-if (length(missing_objects) > 0) {
-  stop(
-    "Missing required objects: ",
-    paste(
-      missing_objects,
-      collapse = ", "
-    )
-  )
-}
+## load shared visual system candidate gene list
+
+visual_genes <- readr::read_csv(
+  "Data/Reference/visual_candidate_genes.csv",
+  show_col_types = FALSE
+) %>%
+  dplyr::pull(
+    gene_name
+  ) %>%
+  trimws() %>%
+  toupper() %>%
+  unique()
+
 
 
 ## check the metadata
@@ -92,6 +83,7 @@ speciesTraits$species <- factor(
 )
 
 ## create one binary indicator column per species
+## repeat from previous script but useful check
 speciesTraitMatrix <- model.matrix(
   ~ 0 + species,
   data = speciesTraits
@@ -129,100 +121,37 @@ stopifnot(
   )
 )
 
-
-## RECALCULATE MODULE-SPECIES ASSOCIATIONS
-
-moduleTraitCor <- WGCNA::bicor(
-  MEs,
-  speciesTraitMatrix,
-  use = "pairwise.complete.obs",
-  maxPOutliers = 0.10,
-  robustY = FALSE
+required_objects <- c(
+  "datExpr",
+  "speciesTraits",
+  "speciesTraitMatrix",
+  "MEs",
+  "geneModuleAssignments",
+  "moduleSizes",
+  "moduleTraitCor",
+  "moduleTraitPvalue",
+  "moduleTraitFDR",
+  "moduleSpeciesResults"
 )
 
-moduleTraitPvalue <- WGCNA::corPvalueStudent(
-  moduleTraitCor,
-  nSamples = nrow(datExpr)
-)
-
-moduleTraitFDR <- matrix(
-  p.adjust(
-    as.vector(moduleTraitPvalue),
-    method = "BH"
-  ),
-  nrow = nrow(moduleTraitPvalue),
-  ncol = ncol(moduleTraitPvalue),
-  dimnames = dimnames(moduleTraitPvalue)
-)
-
-moduleSizes <- geneModuleAssignments %>%
-  dplyr::transmute(
-    Module = sub(
-      "^ME",
-      "",
-      as.character(Module)
-    )
-  ) %>%
-  dplyr::count(
-    Module,
-    name = "module_size"
+missing_objects <- required_objects[
+  !vapply(
+    required_objects,
+    exists,
+    logical(1)
   )
+]
 
-moduleSpeciesResults <- expand.grid(
-  module = rownames(moduleTraitCor),
-  species = colnames(moduleTraitCor),
-  stringsAsFactors = FALSE
-) %>%
-  dplyr::mutate(
-    correlation = as.vector(
-      moduleTraitCor
-    ),
-    absolute_correlation = abs(
-      correlation
-    ),
-    pvalue = as.vector(
-      moduleTraitPvalue
-    ),
-    FDR = as.vector(
-      moduleTraitFDR
-    ),
-    direction = dplyr::case_when(
-      correlation > 0 ~ "Positive",
-      correlation < 0 ~ "Negative",
-      TRUE ~ "None"
-    ),
-    module = sub(
-      "^ME",
-      "",
-      module
-    )
-  ) %>%
-  dplyr::left_join(
-    moduleSizes,
-    by = c(
-      "module" = "Module"
-    )
-  ) %>%
-  dplyr::arrange(
-    species,
-    FDR,
-    dplyr::desc(
-      absolute_correlation
+if (length(missing_objects) > 0) {
+  stop(
+    "Missing required objects: ",
+    paste(
+      missing_objects,
+      collapse = ", "
     )
   )
+}
 
-stopifnot(
-  setequal(
-    unique(moduleSpeciesResults$species),
-    c(
-      "Ab",
-      "Mz",
-      "Nb",
-      "On",
-      "Pn"
-    )
-  )
-)
 
 
 ## ANALYSIS THRESHOLDS
@@ -402,15 +331,16 @@ print(
 
 selectedModuleSpeciesPairs <-
   moduleSpeciesResults_nonGrey %>%
-  filter(
+  dplyr::filter(
     selected_for_hub_analysis
   ) %>%
-  select(
+  dplyr::select(
     species,
     module,
     correlation,
     absolute_correlation,
     direction,
+    expression_pattern,
     pvalue,
     FDR,
     module_size
@@ -680,6 +610,9 @@ focalHubMetrics <- map_dfr(
         
         module_trait_direction =
           selectedModuleSpeciesPairs$direction[i],
+        
+        module_trait_expression_pattern =
+          selectedModuleSpeciesPairs$expression_pattern[i],
         
         module_trait_pvalue =
           selectedModuleSpeciesPairs$pvalue[i],
@@ -1189,7 +1122,10 @@ visual_hub_overlap
 ## save
 write.csv(
   visual_hub_overlap,
-  "Results/WGCNA/hub_genes/12_visual_candidate_hub_overlap.csv",
+  file.path(
+    output_dir,
+    "12_visual_candidate_hub_overlap.csv"
+  ),
   row.names = FALSE
 )
 

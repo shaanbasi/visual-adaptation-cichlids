@@ -1,0 +1,39 @@
+gene_name,visual_category,gene_match,present_in_DESeq2,dataset_gene_name
+opn1lw1,Opsin / photopigment,opn1lw1,TRUE,opn1lw1
+opn1sw2,Opsin / photopigment,opn1sw2,TRUE,opn1sw2
+gnat1,Phototransduction,gnat1,TRUE,gnat1
+gnat2,Phototransduction,gnat2,TRUE,gnat2
+gngt1,Phototransduction,gngt1,TRUE,gngt1
+pde6a,Phototransduction,pde6a,TRUE,pde6a
+pde6b,Phototransduction,pde6b,TRUE,pde6b
+pde6c,Phototransduction,pde6c,TRUE,pde6c
+pde6ga,Phototransduction,pde6ga,TRUE,pde6ga
+cnga1a,CNG channel,cnga1a,TRUE,cnga1a
+cnga1b,CNG channel,cnga1b,TRUE,cnga1b
+cnga3a,CNG channel,cnga3a,TRUE,cnga3a
+cngb1b,CNG channel,cngb1b,TRUE,cngb1b
+guca1a,Photoreceptor recovery,guca1a,TRUE,guca1a
+guca1b,Photoreceptor recovery,guca1b,TRUE,guca1b
+guca1c,Photoreceptor recovery,guca1c,TRUE,guca1c
+guca1d,Photoreceptor recovery,guca1d,TRUE,guca1d
+arr3a,Photoreceptor recovery,arr3a,TRUE,arr3a
+rcvrn2,Photoreceptor recovery,rcvrn2,TRUE,rcvrn2
+rcvrn3,Photoreceptor recovery,rcvrn3,TRUE,rcvrn3
+rgs9a,Photoreceptor recovery,rgs9a,TRUE,rgs9a
+rgs9b,Photoreceptor recovery,rgs9b,TRUE,rgs9b
+rdh5,Visual cycle,rdh5,TRUE,rdh5
+rdh8a,Visual cycle,rdh8a,TRUE,rdh8a
+rdh12,Visual cycle,rdh12,TRUE,rdh12
+rpe65a,Visual cycle,rpe65a,TRUE,rpe65a
+rpe65b,Visual cycle,rpe65b,TRUE,rpe65b
+abca4a,Visual cycle,abca4a,TRUE,abca4a
+abca4b,Visual cycle,abca4b,TRUE,abca4b
+crx,Photoreceptor regulation,crx,TRUE,crx
+nrl,Photoreceptor regulation,nrl,TRUE,nrl
+nr2e3,Photoreceptor regulation,nr2e3,TRUE,NR2E3
+otx2b,Photoreceptor regulation,otx2b,TRUE,otx2b
+pax6b,Retinal regulation,pax6b,TRUE,pax6b
+rx1,Retinal regulation,rx1,TRUE,rx1
+rx2,Retinal regulation,rx2,TRUE,rx2
+six6a,Retinal regulation,six6a,TRUE,six6a
+six7,Retinal regulation,six7,TRUE,six7

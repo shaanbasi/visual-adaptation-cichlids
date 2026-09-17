@@ -1,0 +1,11 @@
+visual_family,n_genes_found,n_already_in_predefined_list,n_additional_candidates,additional_gene_names
+Arrestin / recoverin,8,0,8,arr3a; arrb2a; arrdc1b; arrdc2; arrdc3b; rcvrn2; rcvrn3; saga
+CNG channels,5,0,5,cnga1a; cnga1b; cnga2b; cnga3a; cngb1b
+Guanylate cyclase activators,4,2,2,guca1c; guca1d
+Opsins / photopigments,15,1,14,opn1lw1; opn3; opn6a; opn7a; opn8b; rhobtb2a; rhobtb4; rhof; rhoq; rhot1a; rhot1b; rhot2; rhoua; rhoub
+Other retinal candidates,10,0,10,PRDM15; foxn4; neurod1; prdm10; prdm11; prdm13; prdm2b; prdm4; prdm8b; vsx1
+PDE6 family,5,3,2,pde6d; pde6ga
+Photoreceptor regulators,20,3,17,otx1; otx2b; pax6b; pax9; rx1; rx2; rxfp3.3b; rxrbb; rxylt1; six1b; six3a; six3b; six4a; six5; six6a; six7; six9
+RGS proteins,13,0,13,RGS13; RGS20; rgs11; rgs12b; rgs14a; rgs16; rgs18; rgs19; rgs20; rgs4; rgs5a; rgs9a; rgs9b
+Retinoid cycle,26,1,25,RBPMS; RDH13; abca4a; abca4b; bco1; bco2a; bcorl1; lratb.2; lratd2; rbp3; rbp4; rbp4l; rbp5; rbpjb; rbpms2a; rdh1; rdh10a; rdh12; rdh12l; rdh14b; rdh8a; rpe; rpe65a; rpe65b; stra6
+Transducin / G proteins,9,3,6,gnb1a; gnb1l; gnb2; gnb3b; gnb4b; gnb5b

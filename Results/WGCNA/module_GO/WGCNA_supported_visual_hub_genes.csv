@@ -1,0 +1,2 @@
+species,module,gene_id,module_size,module_trait_correlation,module_trait_FDR,MM,MM_pvalue,GS,aligned_GS,GS_pvalue,passes_all_support_criteria
+On,magenta,NR2E3,202,0.9213597761125775,0.0024880905905499367,0.8411326819374478,6.064935861507699e-4,0.7939645259819106,0.7939645259819106,0.0020450240607718436,TRUE

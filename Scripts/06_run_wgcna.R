@@ -2,6 +2,8 @@ library(WGCNA)
 library(dplyr)
 library(tibble)
 library(readr)
+library(tidyr)
+library(ggplot2)
 
 options(stringsAsFactors = FALSE)
 
@@ -14,9 +16,18 @@ input_dir <- "Data/Processed"
 
 output_dir <- "Results/WGCNA"
 
+figure_dir <- "Figures/WGCNA"
+
 if (!dir.exists(output_dir)) {
   dir.create(
     output_dir,
+    recursive = TRUE
+  )
+}
+
+if (!dir.exists(figure_dir)) {
+  dir.create(
+    figure_dir,
     recursive = TRUE
   )
 }
@@ -35,6 +46,20 @@ speciesTraits <- readRDS(
   file.path(
     input_dir,
     "speciesTraits.rds"
+  )
+)
+
+wgcna_genes <- readRDS(
+  file.path(
+    input_dir,
+    "wgcna_genes.rds"
+  )
+)
+
+stopifnot(
+  identical(
+    colnames(datExpr),
+    wgcna_genes
   )
 )
 
@@ -124,6 +149,46 @@ stopifnot(
 )
 
 
+## CREATE SPECIES TRAIT MATRIX
+
+speciesTraits$species <- factor(
+  speciesTraits$species,
+  levels = c(
+    "Ab",
+    "Mz",
+    "Nb",
+    "On",
+    "Pn"
+  )
+)
+
+speciesTraitMatrix <- model.matrix(
+  ~ 0 + species,
+  data = speciesTraits
+)
+
+colnames(speciesTraitMatrix) <- sub(
+  "^species",
+  "",
+  colnames(speciesTraitMatrix)
+)
+
+speciesTraitMatrix <- as.data.frame(
+  speciesTraitMatrix
+)
+
+rownames(speciesTraitMatrix) <- rownames(
+  speciesTraits
+)
+
+stopifnot(
+  identical(
+    rownames(datExpr),
+    rownames(speciesTraitMatrix)
+  )
+)
+
+
 
 ## SAMPLE CLUSTERING
 
@@ -134,7 +199,7 @@ sampleTree <- hclust(
 
 pdf(
   file.path(
-    output_dir,
+    figure_dir,
     "sample_clustering.pdf"
   ),
   width = 10,
@@ -192,7 +257,7 @@ write_csv(
 
 pdf(
   file.path(
-    output_dir,
+    figure_dir,
     "soft_threshold_diagnostics.pdf"
   ),
   width = 12,
@@ -250,16 +315,19 @@ dev.off()
 
 
 ## SOFT-THRESHOLD SETTINGS
-
+## selected after examining scale-free topology fit and mean connectivity diagnostics
 softPower <- 20
 
 
-## unsigned tutorial, but other authors recommend signed
-## WGCNA author Q&A: "We generally recommend signed 
-## (or signed hybrid) networks because they produce modules 
-## that are easier to interpret biologically."
-## Ultimately, I want to see which genes are working together,
-## It doesn't particularly matter if they behave in opposite directions
+## unsigned tutorial, but other authors recommend signed WGCNA author Q&A:
+## "We generally recommend signed (or signed hybrid) networks because they produce
+## modules that are easier to interpret biologically."
+
+
+## Signed network used so that modules primarily contain genes with positively 
+## correlated expression profiles.
+## Genes with strong negative correlations are not treated as strongly connected 
+## within the same module
 network_type <- "signed"
 TOM_type <- "signed"
 
@@ -301,6 +369,32 @@ net <- blockwiseModules(
 moduleColors <- labels2colors(
   net$colors
 )
+
+##module dendogram and colour assignments
+pdf(
+  file.path(
+    figure_dir,
+    "module_dendrogram_colours.pdf"
+  ),
+  width = 14,
+  height = 8
+)
+
+plotDendroAndColors(
+  net$dendrograms[[1]],
+  moduleColors[
+    net$blockGenes[[1]]
+  ],
+  groupLabels = "Module",
+  dendroLabels = FALSE,
+  hang = 0.03,
+  addGuide = TRUE,
+  guideHang = 0.05,
+  main = "Gene clustering and WGCNA module assignments"
+)
+
+dev.off()
+
 
 geneModuleAssignments <- tibble(
   Gene = colnames(datExpr),
@@ -360,17 +454,37 @@ stopifnot(
 )
 
 
+## Save
+readr::write_csv(
+  tibble::rownames_to_column(
+    as.data.frame(MEs),
+    var = "sample"
+  ),
+  file.path(
+    output_dir,
+    "module_eigengenes.csv"
+  )
+)
+
+readr::write_csv(
+  tibble::rownames_to_column(
+    speciesTraitMatrix,
+    var = "sample"
+  ),
+  file.path(
+    output_dir,
+    "species_trait_matrix.csv"
+  )
+)
+
 
 ##MODULE-SPECIES ASSOCIATIONS
-
 moduleTraitStats <- bicorAndPvalue(
   x = MEs,
-  y = speciesTraits,
+  y = speciesTraitMatrix,
   use = "pairwise.complete.obs",
   maxPOutliers = 0.10,
   robustX = TRUE,
-  
-  ## Species columns are binary dummy variables
   robustY = FALSE
 )
 
@@ -434,6 +548,23 @@ moduleSpeciesResults <- expand.grid(
       correlation > 0 ~ "Positive",
       correlation < 0 ~ "Negative",
       TRUE ~ "Zero"
+    ),
+    
+    expression_pattern = case_when(
+      correlation > 0 ~
+        paste(
+          species,
+          "higher"
+        ),
+      
+      correlation < 0 ~
+        paste(
+          species,
+          "lower"
+        ),
+      
+      TRUE ~
+        "No direction"
     )
   ) %>%
   ungroup() %>%
@@ -460,69 +591,151 @@ write_csv(
 
 ## MODULE-TRAIT HEATMAP
 
-heatmapText <- paste0(
-  signif(
-    moduleTraitCor,
-    2
-  ),
-  "\n(",
-  signif(
-    moduleTraitFDR,
-    2
-  ),
-  ")"
-)
-
-dim(heatmapText) <- dim(moduleTraitCor)
-
-pdf(
-  file.path(
-    output_dir,
-    "module_species_heatmap.pdf"
-  ),
-  width = 9,
-  height = 11
-)
-
-par(
-  mar = c(
-    6,
-    9,
-    3,
-    3
+## prepare nongrey module-species results
+heatmap_df <- moduleSpeciesResults %>%
+  
+  dplyr::filter(
+    module != "grey"
+  ) %>%
+  
+  dplyr::mutate(
+    
+    species = factor(
+      species,
+      levels = c(
+        "Ab",
+        "Mz",
+        "Nb",
+        "On",
+        "Pn"
+      )
+    ),
+    
+    module = factor(
+      module,
+      levels = rev(
+        unique(
+          sub(
+            "^ME",
+            "",
+            rownames(moduleTraitCor)[
+              rownames(moduleTraitCor) != "MEgrey"
+            ]
+          )
+        )
+      )
+    ),
+    
+    label = sprintf(
+      "%.2f",
+      correlation
+    ),
+    
+    significant =
+      !is.na(FDR) &
+      FDR < 0.05,
+    
+    label_sig = ifelse(
+      significant,
+      paste0(label, "*"),
+      label
+    )
   )
-)
 
-labeledHeatmap(
-  Matrix = moduleTraitCor,
-  
-  xLabels = colnames(speciesTraits),
-  yLabels = rownames(moduleTraitCor),
-  
-  ySymbols = rownames(moduleTraitCor),
-  
-  colorLabels = FALSE,
-  
-  colors = blueWhiteRed(50),
-  
-  textMatrix = heatmapText,
-  
-  setStdMargins = FALSE,
-  
-  cex.text = 0.6,
-  
-  zlim = c(
-    -1,
-    1
-  ),
-  
-  main = paste(
-    "Module-species relationships",
-    "\ncorrelation (BH FDR)"
+
+p_module_heatmap <- ggplot(
+  heatmap_df,
+  aes(
+    x = species,
+    y = module,
+    fill = correlation
   )
-)
+) +
+  
+  geom_tile(
+    colour = "white",
+    linewidth = 0.4
+  ) +
+  
+  geom_text(
+    aes(
+      label = label_sig,
+      fontface = ifelse(
+        significant,
+        "bold",
+        "plain"
+      )
+    ),
+    size = 3
+  ) +
+  
+  scale_fill_gradient2(
+    name = "Correlation",
+    low = "#2166AC",
+    mid = "white",
+    high = "#B2182B",
+    midpoint = 0,
+    limits = c(
+      -1,
+      1
+    )
+  ) +
+  
+  labs(
+    x = NULL,
+    y = NULL
+  ) +
+  
+  theme_classic(
+    base_size = 12
+  ) +
+  
+  theme(
+    
+    axis.text.x = element_text(
+      face = "bold",
+      size = 10
+    ),
+    
+    axis.text.y = element_text(
+      size = 8
+    ),
+    
+    axis.ticks = element_blank(),
+    
+    legend.title = element_text(
+      face = "bold",
+      size = 10
+    ),
+    
+    legend.text = element_text(
+      size = 9
+    ),
+    
+    plot.margin = margin(
+      8,
+      8,
+      8,
+      8
+    )
+  )
 
-dev.off()
+## display
+p_module_heatmap
+
+
+## save
+ggsave(
+  filename = file.path(
+    figure_dir,
+    "Figure4A_module_species_heatmap.png"
+  ),
+  plot = p_module_heatmap,
+  width = 8,
+  height = 7,
+  dpi = 600,
+  bg = "white"
+)
 
 
 
@@ -531,6 +744,7 @@ dev.off()
 save(
   datExpr,
   speciesTraits,
+  speciesTraitMatrix,
   softPower,
   network_type,
   TOM_type,
@@ -620,3 +834,4 @@ cat(
 cat(
   "============================================\n\n"
 )
+

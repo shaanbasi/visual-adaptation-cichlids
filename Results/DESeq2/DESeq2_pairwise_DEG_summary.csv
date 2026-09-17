@@ -1,0 +1,11 @@
+"comparison","species_a","species_b","n_tested","n_DEGs","n_species_a_higher","n_species_b_higher"
+"Ab_vs_Mz","Ab","Mz",8476,1791,714,1077
+"Ab_vs_Nb","Ab","Nb",8476,4867,4361,506
+"Ab_vs_On","Ab","On",8476,2877,900,1977
+"Ab_vs_Pn","Ab","Pn",8476,2175,1160,1015
+"Mz_vs_Nb","Mz","Nb",8476,4129,3722,407
+"Mz_vs_On","Mz","On",8476,1753,901,852
+"Mz_vs_Pn","Mz","Pn",8476,1068,745,323
+"Nb_vs_On","Nb","On",8476,5987,403,5584
+"Nb_vs_Pn","Nb","Pn",8476,4108,505,3603
+"On_vs_Pn","On","Pn",8476,2074,1399,675

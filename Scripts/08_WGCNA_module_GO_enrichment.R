@@ -30,7 +30,6 @@ if (!dir.exists(output_dir)) {
 }
 
 
-
 ## LOAD WGCNA OBJECTS
 
 load(
@@ -46,6 +45,20 @@ load(
     "WGCNA_hub_gene_objects.RData"
   )
 )
+
+
+## load shared visual system candidate gene list
+
+visual_genes <- readr::read_csv(
+  "Data/Reference/visual_candidate_genes.csv",
+  show_col_types = FALSE
+) %>%
+  dplyr::pull(
+    gene_name
+  ) %>%
+  trimws() %>%
+  toupper() %>%
+  unique()
 
 
 
@@ -237,20 +250,227 @@ module_GO_results <- purrr::map_dfr(
 
 
 
-## KEEP GO RESULTS
-module_GO_clean <- module_GO_results %>%
-  dplyr::filter(
-    source %in% c(
-      "GO:BP",
-      "GO:MF",
-      "GO:CC"
-    )
-  ) %>%
-  dplyr::arrange(
-    species,
-    module,
-    p_value
+## KEEP GO RESULTS - updated to prvent crashing
+
+if (
+  nrow(module_GO_results) == 0 ||
+  !"source" %in% colnames(module_GO_results)
+) {
+  
+  message(
+    "No significant GO enrichment detected ",
+    "for the selected module-species pairs."
   )
+  
+  module_GO_clean <- tibble::tibble(
+    species = character(),
+    module = character(),
+    term_id = character(),
+    term_name = character(),
+    source = character(),
+    p_value = double(),
+    intersection_size = integer(),
+    query_size = integer(),
+    term_size = integer(),
+    effective_domain_size = integer(),
+    module_gene_count = integer(),
+    background_gene_count = integer()
+  )
+  
+} else {
+  
+  module_GO_clean <- module_GO_results %>%
+    dplyr::filter(
+      source %in% c(
+        "GO:BP",
+        "GO:MF",
+        "GO:CC"
+      )
+    ) %>%
+    dplyr::arrange(
+      species,
+      module,
+      p_value
+    )
+}
+
+
+
+## WGCNA MODULE GO DOTPLOTS
+
+library(ggplot2)
+
+module_go_figure_dir <- "Figures/WGCNA/module_GO"
+
+dir.create(
+  module_go_figure_dir,
+  showWarnings = FALSE,
+  recursive = TRUE
+)
+
+
+plot_module_GO <- function(
+    go_tbl,
+    species_name,
+    module_name,
+    top_n = 15
+) {
+  
+  plot_data <- go_tbl %>%
+    dplyr::filter(
+      species == species_name,
+      module == module_name,
+      !is.na(p_value),
+      p_value < 0.05
+    ) %>%
+    dplyr::arrange(
+      p_value
+    ) %>%
+    dplyr::slice_head(
+      n = top_n
+    )
+  
+  if (nrow(plot_data) == 0) {
+    return(NULL)
+  }
+  
+  plot_data <- plot_data %>%
+    dplyr::mutate(
+      neg_log10_FDR = -log10(
+        pmax(
+          p_value,
+          .Machine$double.xmin
+        )
+      ),
+      
+      gene_ratio =
+        intersection_size /
+        query_size,
+      
+      term_name = factor(
+        term_name,
+        levels = rev(
+          unique(term_name)
+        )
+      )
+    )
+  
+  ggplot(
+    plot_data,
+    aes(
+      x = neg_log10_FDR,
+      y = term_name,
+      size = gene_ratio,
+      color = source
+    )
+  ) +
+    
+    geom_point(
+      alpha = 0.9
+    ) +
+    
+    scale_size_continuous(
+      name = "Gene ratio",
+      labels = scales::percent_format(
+        accuracy = 1
+      )
+    ) +
+    
+    labs(
+      title = paste(
+        species_name,
+        "-associated",
+        module_name,
+        "module"
+      ),
+      
+      subtitle =
+        "Significant GO enrichment",
+      
+      x = expression(
+        -log[10]("FDR")
+      ),
+      
+      y = "GO term",
+      
+      color = "GO source"
+    ) +
+    
+    theme_classic(
+      base_size = 13
+    ) +
+    
+    theme(
+      plot.title = element_text(
+        face = "bold"
+      ),
+      
+      axis.text.y = element_text(
+        size = 10
+      )
+    )
+}
+
+
+## Generate plots automatically
+module_GO_plot_groups <- module_GO_clean %>%
+  dplyr::distinct(
+    species,
+    module
+  )
+
+
+module_GO_plots <- purrr::pmap(
+  module_GO_plot_groups,
+  
+  function(species, module) {
+    
+    p <- plot_module_GO(
+      go_tbl = module_GO_clean,
+      species_name = species,
+      module_name = module,
+      top_n = 15
+    )
+    
+    if (!is.null(p)) {
+      
+      ggsave(
+        filename = file.path(
+          module_go_figure_dir,
+          paste0(
+            "WGCNA_",
+            species,
+            "_",
+            module,
+            "_GO_enrichment.png"
+          )
+        ),
+        plot = p,
+        width = 10,
+        height = 7,
+        dpi = 600
+      )
+      
+      ggsave(
+        filename = file.path(
+          module_go_figure_dir,
+          paste0(
+            "WGCNA_",
+            species,
+            "_",
+            module,
+            "_GO_enrichment.pdf"
+          )
+        ),
+        plot = p,
+        width = 10,
+        height = 7
+      )
+    }
+    
+    p
+  }
+)
 
 
 ## EXPORT ALL SIGNIFICANT MODULE GO RESULTS
@@ -370,33 +590,52 @@ readr::write_csv(
 
 
 
-## SUMMARISE VISION-RELATED GO TERMS
+## SUMMARISE VISION RELATED GO TERMS
 
-module_vision_GO_summary <- module_vision_GO %>%
-  dplyr::group_by(
-    species,
-    module,
-    term_id,
-    term_name,
-    source
-  ) %>%
-  dplyr::summarise(
-    p_value = min(
-      p_value,
-      na.rm = TRUE
-    ),
-    intersection_size = max(
-      intersection_size,
-      na.rm = TRUE
-    ),
-    n_occurrences = dplyr::n(),
-    .groups = "drop"
-  ) %>%
-  dplyr::arrange(
-    species,
-    module,
-    p_value
+if (nrow(module_vision_GO) > 0) {
+  
+  module_vision_GO_summary <- module_vision_GO %>%
+    dplyr::group_by(
+      species,
+      module,
+      term_id,
+      term_name,
+      source
+    ) %>%
+    dplyr::summarise(
+      p_value = min(
+        p_value,
+        na.rm = TRUE
+      ),
+      
+      intersection_size = max(
+        intersection_size,
+        na.rm = TRUE
+      ),
+      
+      n_occurrences = dplyr::n(),
+      
+      .groups = "drop"
+    ) %>%
+    dplyr::arrange(
+      species,
+      module,
+      p_value
+    )
+  
+} else {
+  
+  module_vision_GO_summary <- tibble::tibble(
+    species = character(),
+    module = character(),
+    term_id = character(),
+    term_name = character(),
+    source = character(),
+    p_value = double(),
+    intersection_size = double(),
+    n_occurrences = integer()
   )
+}
 
 readr::write_csv(
   module_vision_GO_summary,
@@ -423,7 +662,7 @@ print(
 )
 
 
-##CHECK On-PINK ENRICHED TERMS
+## CHECK ENRICHED TERMS IN SELECTED MODULES
 
 module_GO_clean %>%
   dplyr::select(
@@ -461,9 +700,7 @@ module_vision_GO %>%
     n = Inf,
     width = Inf
   )
-## no vision related in either module
-## GO:0007399 – nervous system development
-## not eye specific - but directly related ot neural development!
+
 
 
 ## FINAL SUMMARY
@@ -508,55 +745,6 @@ cat(
 
 ## VISUAL-GENE OVERLAP WITH WGCNA MODULES AND HUB GENES
 
-## candidate genes involved in opsin function, phototransduction,
-## retinal development and the visual cycle
-visual_genes <- toupper(c(
-  "RH1",
-  "RHO",
-  "SWS1",
-  "SWS2A",
-  "SWS2B",
-  "RH2A",
-  "RH2AALPHA",
-  "RH2ABETA",
-  "RH2B",
-  "LWS",
-  "OPN1SW1",
-  "OPN1SW2",
-  "OPN1MW",
-  "OPN1LW",
-  "GNAT1",
-  "GNAT2",
-  "GNB1",
-  "GNGT1",
-  "GNGT2",
-  "PDE6A",
-  "PDE6B",
-  "PDE6C",
-  "CNGA1",
-  "CNGA3",
-  "CNGB1",
-  "CNGB3",
-  "ARR3",
-  "SAG",
-  "RCVRN",
-  "RGS9",
-  "GUCA1A",
-  "GUCA1B",
-  "RPE65",
-  "LRAT",
-  "ABCA4",
-  "RDH5",
-  "RDH8",
-  "CRX",
-  "PAX6",
-  "NRL",
-  "NR2E3",
-  "OTX2",
-  "SIX6"
-))
-
-
 
 ## visual genes present anywhere in the selected WGCNA modules
 
@@ -566,6 +754,7 @@ visual_genes_in_selected_modules <- selectedModuleSpeciesPairs %>%
     module,
     module_size,
     correlation,
+    expression_pattern,
     FDR
   ) %>%
   dplyr::left_join(
@@ -588,6 +777,7 @@ visual_genes_in_selected_modules <- selectedModuleSpeciesPairs %>%
     gene_id,
     module_size,
     correlation,
+    expression_pattern,
     FDR
   ) %>%
   dplyr::arrange(

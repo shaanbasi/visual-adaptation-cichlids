@@ -1,0 +1,14 @@
+term_id,term_name,source,ontology,best_FDR,best_neg_log10_FDR,n_species_direction_combinations,semantic_cluster,broad_term,direction,direction_best_FDR
+GO:0005515,protein binding,GO:MF,MF,6.63362194126723e-27,26.17824928311802,4,1,FALSE,Higher in focal species,1.19371436637119e-20
+GO:0019538,protein metabolic process,GO:BP,BP,3.12734837410326e-16,15.504823737393641,3,3,FALSE,Higher in focal species,5.36208649281241e-16
+GO:0009987,cellular process,GO:BP,BP,7.0155961598649595e-25,24.153935418300797,4,12,TRUE,Higher in focal species,9.76932025730984e-12
+GO:0140096,"catalytic activity, acting on a protein",GO:MF,MF,9.84738695853477e-12,11.006678995902558,2,4,FALSE,Higher in focal species,9.84738695853477e-12
+GO:0005737,cytoplasm,GO:CC,CC,1.0156803699695e-15,14.993242941066082,4,1,FALSE,Higher in focal species,3.40321122034732e-8
+GO:0050896,response to stimulus,GO:BP,BP,1.6960433755764e-4,3.7705630450435774,2,6,FALSE,Higher in focal species,6.6347210334853e-4
+GO:0008289,lipid binding,GO:MF,MF,9.1241790946231e-4,3.0398061987304184,2,6,FALSE,Higher in focal species,9.1241790946231e-4
+GO:0048856,anatomical structure development,GO:BP,BP,9.2680978158348e-4,3.0330093912984277,2,2,FALSE,Higher in focal species,0.00136875216633343
+GO:0006996,organelle organization,GO:BP,BP,3.17673947318613e-7,6.498018400532341,2,7,FALSE,Lower in focal species,3.17673947318613e-7
+GO:0008092,cytoskeletal protein binding,GO:MF,MF,2.6579388635308e-5,4.5754550126846985,2,5,FALSE,Lower in focal species,2.6579388635308e-5
+GO:0048523,negative regulation of cellular process,GO:BP,BP,1.6583304295563e-4,3.780328930097484,2,11,FALSE,Lower in focal species,1.6583304295563e-4
+GO:0005501,retinoid binding,GO:MF,MF,0.0135681465914633,1.8674794729057806,1,NA,NA,NA,NA
+GO:0050931,pigment cell differentiation,GO:BP,BP,0.0121777967106391,1.9144312800913643,1,NA,NA,NA,NA

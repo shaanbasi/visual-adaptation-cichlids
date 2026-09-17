@@ -1,0 +1,36 @@
+species,direction,ontology,comparison,group,term_id,term_name,source,p_value,intersection_size,query_size,term_size,effective_domain_size,fold_enrichment,neg_log10_FDR,semantic_cluster,broad_term
+Ab,Down-regulated,BP,Ab_vs_rest,Other species higher,GO:0006412,translation,GO:BP,3.31049329970442e-8,37,549,201,9946,3.33489202439533,7.480107286775064,1,FALSE
+Ab,Down-regulated,BP,Ab_vs_rest,Other species higher,GO:0009141,nucleoside triphosphate metabolic process,GO:BP,0.0157833817517055,11,549,51,9946,3.90749669631058,1.8017999391016204,2,FALSE
+Ab,Down-regulated,BP,Ab_vs_rest,Other species higher,GO:0009144,purine nucleoside triphosphate metabolic process,GO:BP,0.0157833817517055,10,549,43,9946,4.21315711441522,1.8017999391016204,2,FALSE
+Ab,Down-regulated,BP,Ab_vs_rest,Other species higher,GO:0009205,purine ribonucleoside triphosphate metabolic process,GO:BP,0.0157833817517055,10,549,43,9946,4.21315711441522,1.8017999391016204,2,FALSE
+Ab,Down-regulated,BP,Ab_vs_rest,Other species higher,GO:0046034,ATP metabolic process,GO:BP,0.0157833817517055,10,549,40,9946,4.52914389799636,1.8017999391016204,2,FALSE
+Ab,Down-regulated,CC,Ab_vs_rest,Other species higher,GO:0005840,ribosome,GO:CC,1.79756616561199e-7,26,549,117,9946,4.02590568710787,6.745315114947127,1,FALSE
+Ab,Down-regulated,CC,Ab_vs_rest,Other species higher,GO:0005852,eukaryotic translation initiation factor 3 complex,GO:CC,0.0287190158406614,5,549,13,9946,6.96791368922517,1.5418304468215698,2,FALSE
+Ab,Down-regulated,CC,Ab_vs_rest,Other species higher,GO:0005622,intracellular anatomical structure,GO:CC,0.0287190158406614,142,549,1987,9946,1.29469236741919,1.5418304468215698,3,TRUE
+Ab,Down-regulated,CC,Ab_vs_rest,Other species higher,GO:0005737,cytoplasm,GO:CC,0.0287190158406614,88,549,1124,9946,1.41837958371416,1.5418304468215698,3,TRUE
+Ab,Down-regulated,MF,Ab_vs_rest,Other species higher,GO:0003735,structural constituent of ribosome,GO:MF,2.34661765498591e-8,27,549,112,9946,4.3673887587822,7.629557666198908,1,FALSE
+Ab,Down-regulated,MF,Ab_vs_rest,Other species higher,GO:0005198,structural molecule activity,GO:MF,2.46310522263028e-6,34,549,208,9946,2.9613633179207,5.608517034920297,1,FALSE
+Nb,Down-regulated,CC,Nb_vs_rest,Other species higher,GO:0005622,intracellular anatomical structure,GO:CC,1.16206436696706e-6,868,3769,1987,9946,1.15277400743463,5.934769815625204,1,TRUE
+Nb,Down-regulated,CC,Nb_vs_rest,Other species higher,GO:0005737,cytoplasm,GO:CC,3.78412570136255e-5,506,3769,1124,9946,1.18797287102406,4.422034445604969,1,TRUE
+Nb,Down-regulated,CC,Nb_vs_rest,Other species higher,GO:0043229,intracellular organelle,GO:CC,1.5698808597483e-4,703,3769,1626,9946,1.14092501232786,3.804133305499822,1,TRUE
+Nb,Down-regulated,CC,Nb_vs_rest,Other species higher,GO:0043226,organelle,GO:CC,3.8243969408454e-4,707,3769,1647,9946,1.13278667582327,3.4174370378728725,1,TRUE
+Nb,Down-regulated,CC,Nb_vs_rest,Other species higher,GO:0043231,intracellular membrane-bounded organelle,GO:CC,0.00102342042791668,562,3769,1296,9946,1.14433618636767,2.989945918570714,1,TRUE
+Nb,Down-regulated,CC,Nb_vs_rest,Other species higher,GO:0043227,membrane-bounded organelle,GO:CC,0.00154937644402486,567,3769,1314,9946,1.13870181037083,2.8098430511237718,1,TRUE
+On,Up-regulated,BP,On_vs_rest,On higher,GO:0019538,protein metabolic process,GO:BP,0.00431234172420238,373,2585,1177,9946,1.21932724084607,2.3652868315283992,1,TRUE
+On,Up-regulated,BP,On_vs_rest,On higher,GO:0006412,translation,GO:BP,0.031145190840469,78,2585,201,9946,1.49309160195156,1.5066090036657855,1,FALSE
+On,Up-regulated,CC,On_vs_rest,On higher,GO:0005622,intracellular anatomical structure,GO:CC,0.00115874366130179,598,2585,1987,9946,1.15795377886631,2.936012628570583,1,TRUE
+On,Up-regulated,CC,On_vs_rest,On higher,GO:0043229,intracellular organelle,GO:CC,0.0055660345563628404,490,2585,1626,9946,1.15948049229042,2.2544541017046154,1,TRUE
+On,Up-regulated,CC,On_vs_rest,On higher,GO:0043226,organelle,GO:CC,0.00754551601925291,493,2585,1647,9946,1.15170493447438,2.1223110545430037,1,TRUE
+On,Up-regulated,CC,On_vs_rest,On higher,GO:0005737,cytoplasm,GO:CC,0.0161996627977179,344,2585,1124,9946,1.17755184922596,1.7904940253718473,1,TRUE
+On,Up-regulated,CC,On_vs_rest,On higher,GO:0005852,eukaryotic translation initiation factor 3 complex,GO:CC,0.0180968967154765,10,2585,13,9946,2.95967861925309,1.742395892252029,2,FALSE
+On,Up-regulated,MF,On_vs_rest,On higher,GO:0005488,binding,GO:MF,2.9961223636956e-4,1362,2585,4817,9946,1.08789847690461,3.5234404537253767,1,TRUE
+On,Down-regulated,CC,On_vs_rest,Other species higher,GO:0000307,cyclin-dependent protein kinase holoenzyme complex,GO:CC,0.0377081185611957,2,318,2,9946,31.2767295597484,1.4235651360874821,1,FALSE
+On,Down-regulated,CC,On_vs_rest,Other species higher,GO:0005675,transcription factor TFIIH holo complex,GO:CC,0.0377081185611957,2,318,2,9946,31.2767295597484,1.4235651360874821,1,FALSE
+On,Down-regulated,CC,On_vs_rest,Other species higher,GO:0016528,sarcoplasm,GO:CC,0.0377081185611957,2,318,2,9946,31.2767295597484,1.4235651360874821,2,FALSE
+On,Down-regulated,CC,On_vs_rest,Other species higher,GO:0019908,nuclear cyclin-dependent protein kinase holoenzyme complex,GO:CC,0.0377081185611957,2,318,2,9946,31.2767295597484,1.4235651360874821,1,FALSE
+On,Down-regulated,CC,On_vs_rest,Other species higher,GO:0032806,carboxy-terminal domain protein kinase complex,GO:CC,0.0377081185611957,2,318,2,9946,31.2767295597484,1.4235651360874821,1,FALSE
+On,Down-regulated,MF,On_vs_rest,Other species higher,GO:0004519,endonuclease activity,GO:MF,0.0305952848101875,6,318,26,9946,7.21770682148041,1.514345499619903,1,FALSE
+On,Down-regulated,MF,On_vs_rest,Other species higher,GO:0004520,DNA endonuclease activity,GO:MF,0.0305952848101875,4,318,10,9946,12.5106918238994,1.514345499619903,1,FALSE
+On,Down-regulated,MF,On_vs_rest,Other species higher,GO:0004536,DNA nuclease activity,GO:MF,0.0312472761908834,4,318,11,9946,11.3733562035449,1.505187833898323,1,FALSE
+Pn,Down-regulated,MF,Pn_vs_rest,Other species higher,GO:0140097,"catalytic activity, acting on DNA",GO:MF,0.00110631130117121,13,339,80,9946,4.76762536873156,2.9561226511887733,1,FALSE
+Pn,Down-regulated,MF,Pn_vs_rest,Other species higher,GO:0140640,"catalytic activity, acting on a nucleic acid",GO:MF,0.0473150639404493,21,339,261,9946,2.36062794561421,1.3250005686772506,1,FALSE

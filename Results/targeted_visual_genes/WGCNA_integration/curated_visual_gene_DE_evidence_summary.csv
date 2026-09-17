@@ -1,0 +1,39 @@
+gene_match,gene_name.y,visual_category,n_species_significant,strongest_abs_log2FC,best_FDR,significant_patterns
+opn1lw1,opn1lw1,Opsin / photopigment,5,6.04610860281055,2.09199616824581e-5,Ab higher; Mz lower; Nb lower; On higher; Pn higher
+gngt1,gngt1,Phototransduction,4,9.42945434687122,8.170807092997331e-9,Mz higher; Nb lower; On higher; Pn higher
+cnga1b,cnga1b,CNG channel,4,7.07616066368571,1.4073772960478e-8,Mz higher; Nb lower; On higher; Pn lower
+arr3a,arr3a,Photoreceptor recovery,4,9.64405864016328,1.06858813980919e-7,Mz higher; Nb lower; On higher; Pn higher
+guca1b,guca1b,Photoreceptor recovery,4,8.33213222557982,2.14725317062774e-6,Mz higher; Nb lower; On higher; Pn higher
+pde6a,pde6a,Phototransduction,4,2.93568314230975,6.8968385526378e-4,Ab lower; Nb lower; On higher; Pn higher
+guca1c,guca1c,Photoreceptor recovery,3,9.86739576374109,1.90103053085282e-7,Ab higher; Mz higher; Nb lower
+guca1a,guca1a,Photoreceptor recovery,3,7.24749317803022,3.38417976806812e-5,Mz higher; Nb lower; Pn higher
+gnat2,gnat2,Phototransduction,3,3.47720753967078,1.6991024033713e-4,Mz higher; Nb lower; Pn lower
+opn1sw2,opn1sw2,Opsin / photopigment,2,9.1036467391643,7.2454101096815904e-09,Ab higher; Nb lower
+abca4a,abca4a,Visual cycle,2,5.48910049699896,4.88562659130577e-8,Ab lower; On higher
+rpe65a,rpe65a,Visual cycle,2,5.88712823649074,1.48663007114256e-7,Ab lower; On higher
+cngb1b,cngb1b,CNG channel,2,5.11652663142096,2.82896979177123e-6,Nb lower; On higher
+nr2e3,nr2e3,Photoreceptor regulation,2,5.43788838571503,3.23960131998866e-6,Nb lower; On higher
+pde6ga,pde6ga,Phototransduction,2,6.60259502373079,5.05936490011024e-5,Nb lower; On higher
+pde6c,pde6c,Phototransduction,2,7.48111156482011,8.2307923185019e-5,Nb lower; On higher
+gnat1,gnat1,Phototransduction,2,3.52928205168208,1.0005159300156e-4,Ab lower; On higher
+rdh8a,rdh8a,Visual cycle,2,2.72434837965901,1.0754997905528e-4,Nb lower; On higher
+cnga3a,cnga3a,CNG channel,2,6.69486108108418,1.6688801558113e-4,Nb lower; On higher
+abca4b,abca4b,Visual cycle,2,6.79049799961818,2.2271489991066e-4,Nb lower; On higher
+rgs9a,rgs9a,Photoreceptor recovery,2,3.97403718466631,4.316809334681e-4,Ab higher; Pn lower
+rgs9b,rgs9b,Photoreceptor recovery,2,4.69210944778948,0.00210027205208366,Nb lower; On higher
+six7,six7,Retinal regulation,2,4.11785407139684,0.00542874440478947,Nb lower; On higher
+rcvrn3,rcvrn3,Photoreceptor recovery,2,2.67821687838493,0.0241936799424796,Ab lower; On higher
+rpe65b,rpe65b,Visual cycle,1,3.42733613282825,3.91600262623218e-6,Mz higher
+crx,crx,Photoreceptor regulation,1,6.87673628990066,1.3015651607875e-4,Nb lower
+six6a,six6a,Retinal regulation,1,6.17950994592816,7.3782673974431e-4,Nb lower
+rdh12,rdh12,Visual cycle,1,5.15230482830147,8.450946194296e-4,On higher
+nrl,nrl,Photoreceptor regulation,1,5.45987739239002,0.0031648005319268,Nb lower
+rx1,rx1,Retinal regulation,1,4.79827738422544,0.0119520549281127,Nb lower
+otx2b,otx2b,Photoreceptor regulation,1,3.8565537246606,0.0170192975085408,Ab higher
+rcvrn2,rcvrn2,Photoreceptor recovery,1,1.41867311283575,0.0189939535648908,Pn lower
+rdh5,rdh5,Visual cycle,1,4.0997870032614,0.0213162912809497,On higher
+rx2,rx2,Retinal regulation,1,3.38813115693186,0.0231306928950486,On higher
+guca1d,guca1d,Photoreceptor recovery,0,3.92916681623424,0.0642083124220158,
+pax6b,pax6b,Retinal regulation,0,3.15861991806961,0.988858133380069,
+cnga1a,cnga1a,CNG channel,0,9.81245117687572,NA,
+pde6b,pde6b,Phototransduction,0,2.55772118116569,NA,

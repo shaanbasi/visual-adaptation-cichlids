@@ -1,0 +1,33 @@
+direction,term_id,term_name,source,ontology,best_FDR,maximum_gene_count,n_species_enriched
+Higher in focal species,GO:0005488,binding,GO:MF,MF,9.621174787204489e-35,1366,3
+Higher in focal species,GO:0005515,protein binding,GO:MF,MF,1.19371436637119e-20,672,3
+Higher in focal species,GO:0019538,protein metabolic process,GO:BP,BP,5.36208649281241e-16,373,1
+Higher in focal species,GO:0036094,small molecule binding,GO:MF,MF,3.9009853576060505e-15,595,3
+Higher in focal species,GO:0043167,ion binding,GO:MF,MF,5.0444353319587705e-15,577,3
+Higher in focal species,GO:0003824,catalytic activity,GO:MF,MF,4.33237296152539e-13,738,5
+Higher in focal species,GO:0009987,cellular process,GO:BP,BP,9.76932025730984e-12,1282,2
+Higher in focal species,GO:0140096,"catalytic activity, acting on a protein",GO:MF,MF,9.84738695853477e-12,302,1
+Higher in focal species,GO:0005737,cytoplasm,GO:CC,CC,3.40321122034732e-8,344,2
+Higher in focal species,GO:0043168,anion binding,GO:MF,MF,4.46977516272567e-7,323,1
+Higher in focal species,GO:0043169,cation binding,GO:MF,MF,7.39330571661529e-7,287,2
+Higher in focal species,GO:0046872,metal ion binding,GO:MF,MF,9.81932811255188e-7,281,2
+Higher in focal species,GO:1901363,heterocyclic compound binding,GO:MF,MF,1.33456157318704e-6,326,1
+Higher in focal species,GO:0008152,metabolic process,GO:BP,BP,1.43216910309422e-6,800,2
+Higher in focal species,GO:0044238,primary metabolic process,GO:BP,BP,1.74703980982752e-6,740,2
+Lower in focal species,GO:0005488,binding,GO:MF,MF,4.7677023936259e-39,1909,2
+Lower in focal species,GO:0005515,protein binding,GO:MF,MF,6.63362194126723e-27,943,1
+Lower in focal species,GO:0009987,cellular process,GO:BP,BP,7.0155961598649595e-25,1889,2
+Lower in focal species,GO:0003824,catalytic activity,GO:MF,MF,2.52318248502218e-16,1042,4
+Lower in focal species,GO:0019538,protein metabolic process,GO:BP,BP,3.12734837410326e-16,498,2
+Lower in focal species,GO:0005737,cytoplasm,GO:CC,CC,1.0156803699695e-15,505,2
+Lower in focal species,GO:0036094,small molecule binding,GO:MF,MF,2.1878092577489e-14,809,3
+Lower in focal species,GO:0043167,ion binding,GO:MF,MF,2.1878092577489e-14,785,2
+Lower in focal species,GO:0006412,translation,GO:BP,BP,6.33461054760917e-11,92,2
+Lower in focal species,GO:0160307,protein biosynthetic process,GO:BP,BP,6.33461054760917e-11,92,2
+Lower in focal species,GO:0065007,biological regulation,GO:BP,BP,6.52413971559236e-11,684,1
+Lower in focal species,GO:0050789,regulation of biological process,GO:BP,BP,8.134173231288769e-11,661,1
+Lower in focal species,GO:0140096,"catalytic activity, acting on a protein",GO:MF,MF,2.14951529097418e-10,400,1
+Lower in focal species,GO:0008152,metabolic process,GO:BP,BP,7.588249431468201e-10,1148,3
+Lower in focal species,GO:0050794,regulation of cellular process,GO:BP,BP,7.73406536524152e-10,638,1
+Lower in focal species,GO:0050931,pigment cell differentiation,GO:BP,BP,NA,NA,NA
+Higher in focal species,GO:0005501,retinoid binding,GO:MF,MF,NA,NA,NA

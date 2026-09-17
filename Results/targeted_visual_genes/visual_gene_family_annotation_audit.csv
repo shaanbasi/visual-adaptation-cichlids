@@ -1,0 +1,116 @@
+gene_name,gene_match,visual_family,in_predefined_visual_list
+arr3a,arr3a,Arrestin / recoverin,FALSE
+arrb2a,arrb2a,Arrestin / recoverin,FALSE
+arrdc1b,arrdc1b,Arrestin / recoverin,FALSE
+arrdc2,arrdc2,Arrestin / recoverin,FALSE
+arrdc3b,arrdc3b,Arrestin / recoverin,FALSE
+rcvrn2,rcvrn2,Arrestin / recoverin,FALSE
+rcvrn3,rcvrn3,Arrestin / recoverin,FALSE
+saga,saga,Arrestin / recoverin,FALSE
+cnga1a,cnga1a,CNG channels,FALSE
+cnga1b,cnga1b,CNG channels,FALSE
+cnga2b,cnga2b,CNG channels,FALSE
+cnga3a,cnga3a,CNG channels,FALSE
+cngb1b,cngb1b,CNG channels,FALSE
+guca1a,guca1a,Guanylate cyclase activators,TRUE
+guca1b,guca1b,Guanylate cyclase activators,TRUE
+guca1c,guca1c,Guanylate cyclase activators,FALSE
+guca1d,guca1d,Guanylate cyclase activators,FALSE
+opn1lw1,opn1lw1,Opsins / photopigments,FALSE
+opn1sw2,opn1sw2,Opsins / photopigments,TRUE
+opn3,opn3,Opsins / photopigments,FALSE
+opn6a,opn6a,Opsins / photopigments,FALSE
+opn7a,opn7a,Opsins / photopigments,FALSE
+opn8b,opn8b,Opsins / photopigments,FALSE
+rhobtb2a,rhobtb2a,Opsins / photopigments,FALSE
+rhobtb4,rhobtb4,Opsins / photopigments,FALSE
+rhof,rhof,Opsins / photopigments,FALSE
+rhoq,rhoq,Opsins / photopigments,FALSE
+rhot1a,rhot1a,Opsins / photopigments,FALSE
+rhot1b,rhot1b,Opsins / photopigments,FALSE
+rhot2,rhot2,Opsins / photopigments,FALSE
+rhoua,rhoua,Opsins / photopigments,FALSE
+rhoub,rhoub,Opsins / photopigments,FALSE
+PRDM15,prdm15,Other retinal candidates,FALSE
+foxn4,foxn4,Other retinal candidates,FALSE
+neurod1,neurod1,Other retinal candidates,FALSE
+prdm10,prdm10,Other retinal candidates,FALSE
+prdm11,prdm11,Other retinal candidates,FALSE
+prdm13,prdm13,Other retinal candidates,FALSE
+prdm2b,prdm2b,Other retinal candidates,FALSE
+prdm4,prdm4,Other retinal candidates,FALSE
+prdm8b,prdm8b,Other retinal candidates,FALSE
+vsx1,vsx1,Other retinal candidates,FALSE
+pde6a,pde6a,PDE6 family,TRUE
+pde6b,pde6b,PDE6 family,TRUE
+pde6c,pde6c,PDE6 family,TRUE
+pde6d,pde6d,PDE6 family,FALSE
+pde6ga,pde6ga,PDE6 family,FALSE
+NR2E3,nr2e3,Photoreceptor regulators,TRUE
+crx,crx,Photoreceptor regulators,TRUE
+nrl,nrl,Photoreceptor regulators,TRUE
+otx1,otx1,Photoreceptor regulators,FALSE
+otx2b,otx2b,Photoreceptor regulators,FALSE
+pax6b,pax6b,Photoreceptor regulators,FALSE
+pax9,pax9,Photoreceptor regulators,FALSE
+rx1,rx1,Photoreceptor regulators,FALSE
+rx2,rx2,Photoreceptor regulators,FALSE
+rxfp3.3b,rxfp3.3b,Photoreceptor regulators,FALSE
+rxrbb,rxrbb,Photoreceptor regulators,FALSE
+rxylt1,rxylt1,Photoreceptor regulators,FALSE
+six1b,six1b,Photoreceptor regulators,FALSE
+six3a,six3a,Photoreceptor regulators,FALSE
+six3b,six3b,Photoreceptor regulators,FALSE
+six4a,six4a,Photoreceptor regulators,FALSE
+six5,six5,Photoreceptor regulators,FALSE
+six6a,six6a,Photoreceptor regulators,FALSE
+six7,six7,Photoreceptor regulators,FALSE
+six9,six9,Photoreceptor regulators,FALSE
+RGS13,rgs13,RGS proteins,FALSE
+RGS20,rgs20,RGS proteins,FALSE
+rgs11,rgs11,RGS proteins,FALSE
+rgs12b,rgs12b,RGS proteins,FALSE
+rgs14a,rgs14a,RGS proteins,FALSE
+rgs16,rgs16,RGS proteins,FALSE
+rgs18,rgs18,RGS proteins,FALSE
+rgs19,rgs19,RGS proteins,FALSE
+rgs20,rgs20,RGS proteins,FALSE
+rgs4,rgs4,RGS proteins,FALSE
+rgs5a,rgs5a,RGS proteins,FALSE
+rgs9a,rgs9a,RGS proteins,FALSE
+rgs9b,rgs9b,RGS proteins,FALSE
+RBPMS,rbpms,Retinoid cycle,FALSE
+RDH13,rdh13,Retinoid cycle,FALSE
+abca4a,abca4a,Retinoid cycle,FALSE
+abca4b,abca4b,Retinoid cycle,FALSE
+bco1,bco1,Retinoid cycle,FALSE
+bco2a,bco2a,Retinoid cycle,FALSE
+bcorl1,bcorl1,Retinoid cycle,FALSE
+lratb.2,lratb.2,Retinoid cycle,FALSE
+lratd2,lratd2,Retinoid cycle,FALSE
+rbp3,rbp3,Retinoid cycle,FALSE
+rbp4,rbp4,Retinoid cycle,FALSE
+rbp4l,rbp4l,Retinoid cycle,FALSE
+rbp5,rbp5,Retinoid cycle,FALSE
+rbpjb,rbpjb,Retinoid cycle,FALSE
+rbpms2a,rbpms2a,Retinoid cycle,FALSE
+rdh1,rdh1,Retinoid cycle,FALSE
+rdh10a,rdh10a,Retinoid cycle,FALSE
+rdh12,rdh12,Retinoid cycle,FALSE
+rdh12l,rdh12l,Retinoid cycle,FALSE
+rdh14b,rdh14b,Retinoid cycle,FALSE
+rdh5,rdh5,Retinoid cycle,TRUE
+rdh8a,rdh8a,Retinoid cycle,FALSE
+rpe,rpe,Retinoid cycle,FALSE
+rpe65a,rpe65a,Retinoid cycle,FALSE
+rpe65b,rpe65b,Retinoid cycle,FALSE
+stra6,stra6,Retinoid cycle,FALSE
+gnat1,gnat1,Transducin / G proteins,TRUE
+gnat2,gnat2,Transducin / G proteins,TRUE
+gnb1a,gnb1a,Transducin / G proteins,FALSE
+gnb1l,gnb1l,Transducin / G proteins,FALSE
+gnb2,gnb2,Transducin / G proteins,FALSE
+gnb3b,gnb3b,Transducin / G proteins,FALSE
+gnb4b,gnb4b,Transducin / G proteins,FALSE
+gnb5b,gnb5b,Transducin / G proteins,FALSE
+gngt1,gngt1,Transducin / G proteins,TRUE

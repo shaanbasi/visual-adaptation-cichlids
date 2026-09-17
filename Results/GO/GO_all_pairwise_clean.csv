@@ -1,0 +1,67 @@
+"comparison","group","term_id","term_name","source","p_value","intersection_size","query_size"
+"Ab_vs_Mz","Mz higher","GO:0006412","translation","GO:BP",3.54243760475914e-05,40,795
+"Ab_vs_Mz","Mz higher","GO:0160307","protein biosynthetic process","GO:BP",3.54243760475914e-05,40,795
+"Ab_vs_Mz","Mz higher","GO:0005840","ribosome","GO:CC",8.17630852330493e-06,29,795
+"Ab_vs_Mz","Mz higher","GO:0003735","structural constituent of ribosome","GO:MF",1.30289868987192e-06,30,795
+"Ab_vs_Mz","Mz higher","GO:0005198","structural molecule activity","GO:MF",0.00243161908679078,36,795
+"Ab_vs_Nb","Nb higher","GO:0005789","endoplasmic reticulum membrane","GO:CC",0.02234127329492,11,378
+"Ab_vs_Nb","Nb higher","GO:0030867","rough endoplasmic reticulum membrane","GO:CC",0.02234127329492,3,378
+"Ab_vs_Nb","Nb higher","GO:0098827","endoplasmic reticulum subcompartment","GO:CC",0.02234127329492,11,378
+"Ab_vs_Nb","Nb higher","GO:0042175","nuclear outer membrane-endoplasmic reticulum membrane network","GO:CC",0.02234127329492,11,378
+"Ab_vs_Nb","Nb higher","GO:0005783","endoplasmic reticulum","GO:CC",0.0311748429438898,15,378
+"Ab_vs_Nb","Nb higher","GO:0005791","rough endoplasmic reticulum","GO:CC",0.0344938395582905,3,378
+"Ab_vs_On","On higher","GO:0005852","eukaryotic translation initiation factor 3 complex","GO:CC",0.0045823319934613,9,1439
+"Ab_vs_On","On higher","GO:0005840","ribosome","GO:CC",0.0168011221576884,33,1439
+"Ab_vs_On","On higher","GO:0003735","structural constituent of ribosome","GO:MF",0.00522748673969321,34,1439
+"Ab_vs_On","On higher","GO:0005198","structural molecule activity","GO:MF",0.00522748673969321,54,1439
+"Ab_vs_On","On higher","GO:0005501","retinoid binding","GO:MF",0.0138486078205432,5,1439
+"Ab_vs_On","On higher","GO:0019840","isoprenoid binding","GO:MF",0.0138486078205432,5,1439
+"Ab_vs_Pn","Pn higher","GO:0006412","translation","GO:BP",0.000486392945279561,36,748
+"Ab_vs_Pn","Pn higher","GO:0160307","protein biosynthetic process","GO:BP",0.000486392945279561,36,748
+"Ab_vs_Pn","Pn higher","GO:0005840","ribosome","GO:CC",0.000120597135265713,26,748
+"Ab_vs_Pn","Pn higher","GO:0005737","cytoplasm","GO:CC",0.00106889342084904,123,748
+"Ab_vs_Pn","Pn higher","GO:0005739","mitochondrion","GO:CC",0.00259721836140571,32,748
+"Ab_vs_Pn","Pn higher","GO:0005852","eukaryotic translation initiation factor 3 complex","GO:CC",0.00832034444007776,6,748
+"Ab_vs_Pn","Pn higher","GO:0031968","organelle outer membrane","GO:CC",0.00832034444007776,8,748
+"Ab_vs_Pn","Pn higher","GO:0019867","outer membrane","GO:CC",0.00832034444007776,8,748
+"Ab_vs_Pn","Pn higher","GO:0005741","mitochondrial outer membrane","GO:CC",0.00832034444007776,8,748
+"Ab_vs_Pn","Pn higher","GO:0005622","intracellular anatomical structure","GO:CC",0.0151979702939123,186,748
+"Ab_vs_Pn","Pn higher","GO:0045277","respiratory chain complex IV","GO:CC",0.0219769060709557,5,748
+"Ab_vs_Pn","Pn higher","GO:0031090","organelle membrane","GO:CC",0.0219769060709557,39,748
+"Ab_vs_Pn","Pn higher","GO:0031966","mitochondrial membrane","GO:CC",0.0219769060709557,15,748
+"Ab_vs_Pn","Pn higher","GO:0005740","mitochondrial envelope","GO:CC",0.0451840754823323,16,748
+"Ab_vs_Pn","Pn higher","GO:0098803","respiratory chain complex","GO:CC",0.0476491034261752,8,748
+"Ab_vs_Pn","Pn higher","GO:0003735","structural constituent of ribosome","GO:MF",2.3340344292682e-05,27,748
+"Ab_vs_Pn","Pn higher","GO:0005198","structural molecule activity","GO:MF",0.000192772857784882,37,748
+"Mz_vs_Nb","Mz higher","GO:0006412","translation","GO:BP",0.00513406563557783,85,2741
+"Mz_vs_Nb","Mz higher","GO:0160307","protein biosynthetic process","GO:BP",0.00513406563557783,85,2741
+"Mz_vs_Nb","Mz higher","GO:0030029","actin filament-based process","GO:BP",0.0104838640942749,50,2741
+"Mz_vs_Nb","Mz higher","GO:0030036","actin cytoskeleton organization","GO:BP",0.0104838640942749,50,2741
+"Mz_vs_Nb","Mz higher","GO:0007010","cytoskeleton organization","GO:BP",0.0395632079445976,70,2741
+"Mz_vs_Nb","Mz higher","GO:0019538","protein metabolic process","GO:BP",0.0433893048614952,379,2741
+"Mz_vs_Nb","Mz higher","GO:0005622","intracellular anatomical structure","GO:CC",0.00107813361336933,631,2741
+"Mz_vs_Nb","Mz higher","GO:0043229","intracellular organelle","GO:CC",0.0372087004621364,509,2741
+"Mz_vs_Nb","Mz higher","GO:0043226","organelle","GO:CC",0.0372261211026261,512,2741
+"Mz_vs_Nb","Mz higher","GO:0005737","cytoplasm","GO:CC",0.0372261211026261,360,2741
+"Mz_vs_Pn","Pn higher","GO:0031090","organelle membrane","GO:CC",0.0418558482908919,18,230
+"Nb_vs_On","On higher","GO:0019538","protein metabolic process","GO:BP",0.00218738889867541,563,4105
+"Nb_vs_On","On higher","GO:0043170","macromolecule metabolic process","GO:BP",0.0300926887447181,997,4105
+"Nb_vs_On","On higher","GO:0005622","intracellular anatomical structure","GO:CC",0.000101640379453684,921,4105
+"Nb_vs_On","On higher","GO:0005737","cytoplasm","GO:CC",0.00091327060680696,535,4105
+"Nb_vs_On","On higher","GO:0043229","intracellular organelle","GO:CC",0.0012900090794255,751,4105
+"Nb_vs_On","On higher","GO:0043226","organelle","GO:CC",0.00204901338352763,757,4105
+"Nb_vs_On","On higher","GO:0043231","intracellular membrane-bounded organelle","GO:CC",0.00271993288375434,603,4105
+"Nb_vs_On","On higher","GO:0043227","membrane-bounded organelle","GO:CC",0.00359652812021551,609,4105
+"Nb_vs_On","On higher","GO:0005488","binding","GO:MF",9.04509148397927e-06,2128,4105
+"Nb_vs_On","On higher","GO:0005515","protein binding","GO:MF",0.000201747406076845,1065,4105
+"Nb_vs_On","On higher","GO:0140096","catalytic activity, acting on a protein","GO:MF",0.047613483915964,459,4105
+"Nb_vs_Pn","Pn higher","GO:0005622","intracellular anatomical structure","GO:CC",7.77368508991345e-05,621,2648
+"Nb_vs_Pn","Pn higher","GO:0005737","cytoplasm","GO:CC",0.000147148418900755,369,2648
+"Nb_vs_Pn","Pn higher","GO:0043229","intracellular organelle","GO:CC",0.00476150678928137,500,2648
+"Nb_vs_Pn","Pn higher","GO:0043226","organelle","GO:CC",0.00740933234829476,503,2648
+"Nb_vs_Pn","Pn higher","GO:0005839","proteasome core complex","GO:CC",0.0176596234157311,13,2648
+"Nb_vs_Pn","Pn higher","GO:0000502","proteasome complex","GO:CC",0.0280020390918222,18,2648
+"Nb_vs_Pn","Pn higher","GO:1905369","endopeptidase complex","GO:CC",0.0280020390918222,22,2648
+"Nb_vs_Pn","Pn higher","GO:0031090","organelle membrane","GO:CC",0.0389122366757251,107,2648
+"Nb_vs_Pn","Pn higher","GO:0043227","membrane-bounded organelle","GO:CC",0.0419489807905409,398,2648
+"Nb_vs_Pn","Pn higher","GO:0043231","intracellular membrane-bounded organelle","GO:CC",0.0419489807905409,393,2648

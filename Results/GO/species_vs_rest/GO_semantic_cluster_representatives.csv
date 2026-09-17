@@ -1,0 +1,12 @@
+species,direction,ontology,comparison,group,term_id,term_name,source,p_value,intersection_size,query_size,term_size,effective_domain_size,fold_enrichment,neg_log10_FDR,semantic_cluster,broad_term
+Ab,Down-regulated,BP,Ab_vs_rest,Other species higher,GO:0006412,translation,GO:BP,3.31049329970442e-8,37,549,201,9946,3.33489202439533,7.480107286775064,1,FALSE
+Ab,Down-regulated,BP,Ab_vs_rest,Other species higher,GO:0046034,ATP metabolic process,GO:BP,0.0157833817517055,10,549,40,9946,4.52914389799636,1.8017999391016204,2,FALSE
+Ab,Down-regulated,CC,Ab_vs_rest,Other species higher,GO:0005840,ribosome,GO:CC,1.79756616561199e-7,26,549,117,9946,4.02590568710787,6.745315114947127,1,FALSE
+Ab,Down-regulated,CC,Ab_vs_rest,Other species higher,GO:0005852,eukaryotic translation initiation factor 3 complex,GO:CC,0.0287190158406614,5,549,13,9946,6.96791368922517,1.5418304468215698,2,FALSE
+Ab,Down-regulated,MF,Ab_vs_rest,Other species higher,GO:0003735,structural constituent of ribosome,GO:MF,2.34661765498591e-8,27,549,112,9946,4.3673887587822,7.629557666198908,1,FALSE
+On,Up-regulated,BP,On_vs_rest,On higher,GO:0006412,translation,GO:BP,0.031145190840469,78,2585,201,9946,1.49309160195156,1.5066090036657855,1,FALSE
+On,Up-regulated,CC,On_vs_rest,On higher,GO:0005852,eukaryotic translation initiation factor 3 complex,GO:CC,0.0180968967154765,10,2585,13,9946,2.95967861925309,1.742395892252029,2,FALSE
+On,Down-regulated,CC,On_vs_rest,Other species higher,GO:0000307,cyclin-dependent protein kinase holoenzyme complex,GO:CC,0.0377081185611957,2,318,2,9946,31.2767295597484,1.4235651360874821,1,FALSE
+On,Down-regulated,CC,On_vs_rest,Other species higher,GO:0016528,sarcoplasm,GO:CC,0.0377081185611957,2,318,2,9946,31.2767295597484,1.4235651360874821,2,FALSE
+On,Down-regulated,MF,On_vs_rest,Other species higher,GO:0004520,DNA endonuclease activity,GO:MF,0.0305952848101875,4,318,10,9946,12.5106918238994,1.514345499619903,1,FALSE
+Pn,Down-regulated,MF,Pn_vs_rest,Other species higher,GO:0140097,"catalytic activity, acting on DNA",GO:MF,0.00110631130117121,13,339,80,9946,4.76762536873156,2.9561226511887733,1,FALSE
